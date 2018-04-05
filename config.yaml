@@ -63,7 +63,6 @@ Notifications:
         Protocol: email
 
 Microservices:
-  # example that uses a single GitHub repository
   helloworld1:
     Sources:
       MainSrc:
@@ -73,56 +72,11 @@ Microservices:
           Version: 1
           Provider: GitHub
         Configuration:
-          Owner: username
-          Repo: example-repository
+          Owner: RazzM13
+          Repo: nodejs-scaffold-aws-apigateway-microservice
           Branch: master
           OAuthToken: ******
           PollForSourceChanges: true
         RunOrder: 1
     BuildSource: MainSrc
     TestSource: MainSrc
-
-  # example that uses a single AWS CodeCommit repository
-  helloworld2:
-    Sources:
-      MainSrc:
-        ActionTypeId:
-          Category: Source
-          Owner: AWS
-          Version: 1
-          Provider: CodeCommit
-        Configuration:
-          RepositoryName: example-repository
-          BranchName: master
-          PollForSourceChanges: true
-        RunOrder: 1
-    BuildSource: MainSrc
-    TestSource: MainSrc
-
-  # example that uses distinct AWS S3 source repositories
-  helloworld3:
-    Sources:
-      MainSrc:
-        ActionTypeId:
-          Category: Source
-          Owner: AWSMainSrc
-          Version: 1
-          Provider: S3
-        Configuration:
-          S3Bucket: example-bucket
-          S3ObjectKey: main
-          PollForSourceChanges: true
-        RunOrder: 1
-      TestSrc:
-        ActionTypeId:
-          Category: Source
-          Owner: AWS
-          Version: 1
-          Provider: S3
-        Configuration:
-          S3Bucket: example-bucket
-          S3ObjectKey: test
-          PollForSourceChanges: true
-        RunOrder: 1
-    BuildSource: MainSrc
-    TestSource: TestSrc

@@ -40,7 +40,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/RazzM13/codepipeline-aws-rest-microservices.git"
+    "url": "https://github.com/RazzM13/nodejs-scaffold-aws-apigateway-microservice-codepipeline"
   },
   "author": "RazzM13",
   "license": "MIT"
